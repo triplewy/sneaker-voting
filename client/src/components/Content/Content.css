@@ -1,0 +1,20 @@
+.tabSelector {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.tabSelector>div {
+  margin: 0 20px;
+  transition: box-shadow 0.5s;
+}
+
+.tabSelector>div:hover {
+  box-shadow: 0 2px 1px -1px #ccc;
+}
+
+.tabSelector>div>p {
+  font-weight: 300;
+  padding-bottom: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,44 @@
+.uploadButton {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  color: #33a7b7;
+}
+
+.uploadTextInputDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadTextInputDiv>label {
+  margin-top: 20px;
+}
+
+.submit {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 300;
+  border: none;
+  background-color: transparent;
+  color: #33a7b7;
+  transition: color 0.5s;
+}
+
+.submit:disabled {
+  color: #ccc;
+}
+
+.submit:hover {
+  color: rgb(152, 221, 178);
+}
+
+.deleteButton {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  background-size: contain;
+}

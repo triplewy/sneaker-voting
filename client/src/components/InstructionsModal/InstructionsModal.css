@@ -1,0 +1,46 @@
+.carousel-indicators li{
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.carousel-indicators li.active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.instructionsSlide {
+  flex: 1;
+  flex-direction: column;
+  padding: 20px 20px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.topDiv {
+  text-align: left;
+  color: #33a7b7;
+  cursor: pointer;
+  height: 50px;
+  transition: color 0.8s;
+}
+
+.topDiv>p:hover {
+  color: blue;
+}
+
+.instructionsSlideTitle {
+  font-size: 32px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.nextButton {
+  margin-top: 60px;
+  margin-bottom: 100px;
+  color: #33a7b7;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.8s;
+}
+
+.nextButton:hover {
+  color: blue;
+}

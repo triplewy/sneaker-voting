@@ -1,0 +1,19 @@
+.banner {
+  display: flex;
+  padding: 35px 10%;
+  border-bottom: 1px solid #f1f1f1;
+  font-weight: 300;
+}
+
+.banner>div {
+  margin: auto 0;
+}
+
+.countdownDate {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 300px;
+  transition: opacity 1s;
+  background-color: white;
+}

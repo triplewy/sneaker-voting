@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+p {
+  margin: 0 0;
+}
+
+input {
+  display: block;
+  background-color: transparent;
+  padding: 8px 0;
+  border: 0;
+  box-shadow: 0 1px 0px 0px #ebebeb;
+  -webkit-appearance: none;
+  -webkit-transition: box-shadow 0.5s, color 0.5s;
+  transition: box-shadow 0.5s, color 0.5s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 1px 0px 0px #4EA6EA;
+}
+
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  margin: 0 0;
+  font-weight: 300;
+}
+
+.modal-dialog {
+  margin: 5% auto;
+}
+
+.modal-body {
+  padding: 0 30px;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 300;
+  padding: 5px 0;
+}
+
+.carousel.slide {
+  border-radius: 8px;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none;
+}
+
+
+.required:after {
+  display: inline;
+  color: #e32;
+  content: ' *';
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .modal-dialog {
+    margin: 5% 15px;
+  }
+}

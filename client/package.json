@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "blueimp-load-image": "^2.19.0",
     "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5"
+    "react-dropzone": "^6.2.4",
+    "react-router": "^4.3.1",
+    "react-scripts": "2.0.5",
+    "validator": "^10.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
