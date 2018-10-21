@@ -18,13 +18,13 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    // let visited = localStorage['visited']
-    // if (visited) {
-    //   this.setState({visited: true})
-    // } else {
-    //   localStorage['visited'] = true;
-    //   this.setState({visited: false});
-    // }
+    let visited = localStorage['visited']
+    if (visited) {
+      this.setState({visited: true})
+    } else {
+      localStorage['visited'] = true;
+      this.setState({visited: false});
+    }
   }
 
   render() {
@@ -39,6 +39,7 @@ export default class App extends Component {
     } else {
       return (
         <div>
+          <InstructionsModal />
           <Navbar/>
           <Content/>
         </div>

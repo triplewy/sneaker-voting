@@ -23,13 +23,17 @@
 }
 
 .topDiv>p:hover {
-  color: blue;
+  color: #C4EBCF;
 }
 
 .instructionsSlideTitle {
   font-size: 32px;
   margin-top: 60px;
   margin-bottom: 30px;
+}
+
+.descriptionDiv {
+  height: 50px;
 }
 
 .nextButton {
@@ -42,5 +46,5 @@
 }
 
 .nextButton:hover {
-  color: blue;
+  color: #C4EBCF;
 }

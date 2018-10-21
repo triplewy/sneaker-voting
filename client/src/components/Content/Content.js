@@ -10,12 +10,14 @@ export default class Content extends React.Component {
 
     this.state = {
       tab: 0,
-      items: []
+      items: [],
+      hasMore: false
     };
 
     this.toggleTab = this.toggleTab.bind(this)
     this.fetchTop = this.fetchTop.bind(this)
     this.fetchNew = this.fetchNew.bind(this)
+    this.fetchScroll = this.fetchScroll.bind(this)
   }
 
   componentDidMount() {
@@ -38,7 +40,11 @@ export default class Content extends React.Component {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      this.setState({items: data})
+      var hasMore = true
+      if (data.length < 20) {
+        hasMore = false
+      }
+      this.setState({items: data, hasMore: hasMore})
     })
     .catch((error) => {
       console.error(error);
@@ -51,11 +57,49 @@ export default class Content extends React.Component {
     })
     .then((res) => res.json())
     .then((data) => {
-      this.setState({items: data})
+      var hasMore = true
+      if (data.length < 20) {
+        hasMore = false
+      }
+      this.setState({items: data, hasMore: hasMore})
     })
     .catch((error) => {
       console.error(error);
     });
+  }
+
+  fetchScroll() {
+    if (this.state.tab) {
+      fetch(url + '/api/feed/new/' + this.state.items[this.state.items.length - 1].dateTime, {
+        credentials: 'include'
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        var hasMore = true
+        if (data.length < 20) {
+          hasMore = false
+        }
+        this.setState({items: this.state.items.concat(data), hasMore: hasMore})
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    } else {
+      fetch(url + '/api/feed/top/' + this.state.items[this.state.items.length - 1].votes, {
+        credentials: 'include'
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        var hasMore = true
+        if (data.length < 20) {
+          hasMore = false
+        }
+        this.setState({items: this.state.items.concat(data), hasMore: hasMore})
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    }
   }
 
   render() {
@@ -69,7 +113,7 @@ export default class Content extends React.Component {
             <p>New</p>
           </div>
         </div>
-        <Sneakers items={this.state.items}/>
+        <Sneakers items={this.state.items} fetchScroll={this.fetchScroll} hasMore={this.state.hasMore}/>
       </div>
     );
   }

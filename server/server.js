@@ -76,15 +76,12 @@ conn.query('CREATE TABLE IF NOT EXISTS posts (mediaId INTEGER AUTO_INCREMENT PRI
 conn.query('CREATE TABLE IF NOT EXISTS postsImages (imageId INTEGER AUTO_INCREMENT PRIMARY KEY, mediaId INTEGER NOT NULL, imageUrl VARCHAR(255) NOT NULL, FOREIGN KEY (mediaId) REFERENCES posts(mediaId))')
 conn.query('CREATE TABLE IF NOT EXISTS votes (voteId INTEGER AUTO_INCREMENT PRIMARY KEY, mediaId INTEGER NOT NULL, dateTime DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, FOREIGN KEY (mediaId) REFERENCES posts(mediaId));')
 
-// conn.query('CREATE TRIGGER after_votes_insert AFTER INSERT ON votes FOR EACH ROW BEGIN ' +
-// 'UPDATE posts SET votes = (SELECT COUNT(*) FROM votes WHERE mediaId = NEW.mediaId) WHERE mediaId = NEW.mediaId; END;')
+conn.query('CREATE TRIGGER after_votes_insert AFTER INSERT ON votes FOR EACH ROW BEGIN ' +
+'UPDATE posts SET votes = (SELECT COUNT(*) FROM votes WHERE mediaId = NEW.mediaId) WHERE mediaId = NEW.mediaId; END;')
 
 var uploadRoutes = require('./routes/uploadRoutes')
-
 var feedRoutes = require('./routes/feedRoutes')
 var itemRoutes = require('./routes/itemRoutes')
-
-var testData = require('./routes/testData')
 
 app.use('/api/upload', uploadRoutes(upload, conn))
 

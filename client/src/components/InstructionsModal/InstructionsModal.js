@@ -84,9 +84,9 @@ export default class InstructionsModal extends React.Component {
                 <div className='topDiv'>
                   <p style={{textAlign: 'left'}} onClick={this.back}>Back</p>
                 </div>
-                <p className='instructionsSlideTitle'>Enjoy</p>
+                <p className='instructionsSlideTitle'>Design the next biggest sneaker</p>
                 <div className='descriptionDiv'>
-                  <p>Create the next biggest sneaker</p>
+                  <p>After the voting period ends, the top voted sneakers will have a chance to be manufactured</p>
                 </div>
                 <div className='nextButton' onClick={this.handleClose}>
                   <p>Done</p>
